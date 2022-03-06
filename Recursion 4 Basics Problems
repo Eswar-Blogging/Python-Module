@@ -1,0 +1,297 @@
+Q1. Sum the digits
+
+Problem Description
+
+Write a program to input T numbers(N) from user and print the sum of the digits of the given numbers.
+
+
+
+Problem Constraints
+
+1 <= T <= 1000
+
+0 <= N <= 100000000
+
+
+
+Input Format
+
+First line is T which means number of test cases.
+
+Each next T lines contain an integer N.
+
+
+
+Output Format
+
+T lines each containing one integer representing sum of the digits of the input integer.
+
+
+
+Example Input
+
+Input 1:
+
+2
+5
+1001
+Input 2:
+
+2
+123
+1589
+
+
+Example Output
+
+Output 1:
+
+5
+2
+Output 2:
+
+6
+23
+
+
+Example Explanation
+
+Explanation 1:
+
+5 has only 1 digit hence sum is 5.
+Sum(1001) = 1+0+0+1 = 2.
+Explanation 2:
+
+Sum(123) = 1+2+3 = 6.
+Sum(1589) = 1+5+8+9 = 23
+
+def sum(n):
+    if n==0:
+        return 0
+    else:
+        return n%10+sum(n//10)
+    # Please take input and print output to standard input/output (stdin/stdout)
+    # E.g. 'input()/raw_input()' for input & 'print' for output
+def main():
+    n=int(input())
+    for i in range(1,n+1):
+        x= int(input())
+        print(sum(x))
+
+if __name__ == '__main__':
+    main()
+    
+    
+    
+    
+Q2. Sum of evens!
+
+Problem Description
+
+You are given an integer A, you need to find and return the sum of all the even numbers between 1 and A.
+
+Even numbers are those numbers that are divisible by 2.
+
+
+
+Problem Constraints
+
+1 <= N <= 500
+
+
+
+Input Format
+
+First and only argument is an integer A.
+
+
+
+Output Format
+
+Return an integer denoting the sum of even numbers between [1, A] (both inclusive).
+
+
+
+Example Input
+
+Input 1:
+
+ 5
+Input 2:
+
+ 2
+
+
+Example Output
+
+Output 1:
+
+ 6
+Output 2:
+
+ 2
+
+
+Example Explanation
+
+Explanation 1:
+
+ Even numbers between [1, 5] are (2, 4).
+Explanation 2:
+
+ Even numbers between [1, 2] are (2)
+ 
+ 
+ def soe(n):
+    if n==0:
+        return 0
+    if n%2!=0:
+        return soe(n-1)
+    else:
+        return n + soe
+
+class Solution:
+    # @param A : integer
+    # @return an integer
+    def solve(self, A):
+        return soe(A)
+        
+Q3. Multiply the numbers
+
+Problem Description
+
+Given two numbers A & B. Return their product.
+
+
+
+Problem Constraints
+
+1 <= A <= 104
+
+1 <= B <= 104
+
+
+
+Input Format
+
+First argument is an integer A.
+
+Second argument is an integer B.
+
+
+
+Output Format
+
+Return an integer which is the product of A & B.
+
+
+
+Example Input
+
+Input 1:
+
+A = 4, B = 3
+Input 2:
+
+A = 14, B = 34
+
+
+Example Output
+
+Output 1:
+
+12
+Output 2:
+
+476
+
+
+Example Explanation
+
+Explanation 1:
+
+4 * 3 = 12
+Explanation 2:
+
+14 * 34 = 476
+
+import sys
+sys.setrecursionlimit(1000000)
+def multiply(a,n):
+    if n==0:
+        return 0
+    ans= a+ multiply(a, n-1)
+    return ans
+
+Q4. Easy Power
+
+Problem Description
+
+You are given two integers A and B. You have to find the value of AB.
+
+NOTE: The value of answer is always less than or equal to 109.
+
+
+
+Problem Constraints
+
+1 <= A, B <= 1000
+
+
+
+Input Format
+
+First line of the input contains a single integer A.
+
+Second line of the input contains a single integer B.
+
+
+
+Output Format
+
+Print a single integer in single line.
+
+
+
+Example Input
+
+Input 1:
+
+ 2
+ 3 
+Input 2:
+
+ 1
+ 10 
+
+
+Example Output
+
+Output 1:
+
+ 8 
+Output 2:
+
+ 1 
+
+class Solution:
+    # @param A : integer
+    # @param B : integer
+    # @return an integer
+    def solve(self, A, B):
+        return multiply(A,B)
+        
+        
+import sys
+sys.setrecursionlimit(1000000)
+def power(A,B):
+    if B == 1:
+        return A
+    else:
+        ans = A * power(A,B-1)
+        return ans
+
+if __name__ == '__main__':
+    A=int(input())
+    B=int(input())
+    print(power(A,B))
